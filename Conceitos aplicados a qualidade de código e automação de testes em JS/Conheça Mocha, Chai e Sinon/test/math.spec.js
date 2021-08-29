@@ -1,5 +1,6 @@
 const assert = require('assert');
 const Math = require('../math') // pegando a classe de outro arquivo js
+const expect = require('chai').expect; // expect chai
 
 describe('Math class', function () {
 
@@ -35,15 +36,15 @@ describe('Math class', function () {
         value = 5;
 
         math.sum(5, 5, (value) => {
-            assert.equal(value, 10);
+            expect(value).to.equal(10);
             done(); // com o done conseguimos testar codigos assincronos, pois o teste só terminará quando o done() for invocado
         });
     });
 
     it('Multiply two numbers', function() {
         const math = new Math();
-
-        assert.equal(math.multiply(value, 5), 25);
+        
+        expect(math.multiply(value, 5)).to.equal(0);
     });
     // podemos colocar testes de parte do projeto que ainda não fizemos, com isso o mocha irá mostrar que temos teste que ainda estão pendentes
 
